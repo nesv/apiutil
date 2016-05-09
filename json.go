@@ -7,7 +7,8 @@ import (
 )
 
 // WriteJSON marshals the given value v to its JSON representation, and writes
-// it to an http.ResponseWriter with the given HTTP status code.
+// it to an http.ResponseWriter with the given HTTP status code. This function
+// also makes sure to set the "Content-Type" header to "application/json".
 func WriteJSON(w http.ResponseWriter, v interface{}, status int) {
 	p, err := json.Marshal(&v)
 	if err != nil {
